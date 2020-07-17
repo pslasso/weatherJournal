@@ -52,7 +52,7 @@ app.post('/addTemp', addTemp)
 function addTemp(req, res) {
     newEntrie = {
         newDate: req.body.newDate,
-        temp: req.body.celcius,
+        temp: req.body.temp,
         feelings: req.body.feelings
     }
     data.push(newEntrie)
