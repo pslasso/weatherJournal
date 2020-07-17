@@ -36,23 +36,26 @@ function listening() {
 };
 // TODO-ROUTES!
 //GET
-app.get('/', getData)
+
+const data = [];
+app.get('/all', getData)
 
 function getData(req, res) {
-    res.send(projectData)
-    console.log(projectData)
+    res.send(data)
+    console.log(data)
 }
 
 //POST
-app.post('/', addTemp)
+
+app.post('/addTemp', addTemp)
 
 function addTemp(req, res) {
     newEntrie = {
-        date: req.body.newDate,
-        temp: req.body.temp,
+        newDate: req.body.newDate,
+        temp: req.body.celcius,
         feelings: req.body.feelings
     }
-    projectData.push(newEntrie)
-    res.send(projectData)
-    console.log(projectData)
+    data.push(newEntrie)
+    res.send(data)
+    console.log(data)
 }
