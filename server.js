@@ -42,8 +42,9 @@ app.get('/all', getData)
 
 function getData(req, res) {
     res.send(data)
-    console.log(data)
+    console.log(`${data}`)
 }
+
 
 //POST
 
@@ -52,10 +53,12 @@ app.post('/addTemp', addTemp)
 function addTemp(req, res) {
     newEntrie = {
         newDate: req.body.newDate,
-        temp: req.body.temp,
-        feelings: req.body.feelings
+        feelings: req.body.feelings,
+        weather: req.body.weather
     }
     data.push(newEntrie)
     res.send(data)
     console.log(data)
 }
+
+
